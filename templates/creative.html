@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }} - Resume</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 0; }
+        header { background: #2c3e50; color: white; padding: 40px; text-align: center; }
+        .content { padding: 40px; display: flex; }
+        .main { width: 65%; margin-right: 5%; }
+        .aside { width: 30%; }
+        h2 { color: #2c3e50; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-top: 20px; }
+        ul { padding-left: 20px; }
+    </style>
+</head>
+<body>
+<header>
+    <h1>{{ name }}</h1>
+    <p>{{ email }} | {{ phone }}</p>
+</header>
+<div class="content">
+    <div class="main">
+        <h2>Summary</h2>
+        <p>{{ summary }}</p>
+        <h2>Experience</h2>
+        <ul>
+        {% for item in experience %}
+            <li>{{ item }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="aside">
+        <h2>Education</h2>
+        <ul>
+        {% for item in education %}
+            <li>{{ item }}</li>
+        {% endfor %}
+        </ul>
+        <h2>Skills</h2>
+        <ul>
+        {% for skill in skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+</body>
+</html>
